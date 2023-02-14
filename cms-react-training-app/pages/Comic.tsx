@@ -1,13 +1,13 @@
-import Button from "./Button"
-import Details from "./Details"
+// import Button from "./Button"
+// import ComicDetail from "./ComicDetail"
 
-export default function Comic() {
+export default function Comic({comic}) {
 
     return (
         <div>
-            <img src="https://via.placeholder.com/200x250"/>
-            <Button></Button>
-            <Details></Details>
+           <li key={comic.id}>
+                {comic.title}
+           </li>
         </div>
     )
 }
