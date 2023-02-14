@@ -1,9 +1,13 @@
+import Button from "./Button"
+import Details from "./Details"
+
 export default function Comic() {
+
     return (
         <div>
-            <li>I am a comic</li>
-            <li>I am a comic 2</li>
-            <li>I am a comic 3</li>
+            <img src="https://via.placeholder.com/200x250"/>
+            <Button></Button>
+            <Details></Details>
         </div>
     )
 }
