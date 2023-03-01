@@ -1,4 +1,5 @@
 import Comic from "./Comic"
+import styles from "../styles/Comics.module.css";
 
 const comics = [
     {
@@ -508,16 +509,18 @@ const comics = [
     }
   ]
 
-const comicsIndexStyles = {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr",
-    gap: "20px"
-}
+// const comicsIndexStyles = {
+//     display: "grid",
+//     gridTemplateColumns: "1fr 1fr 1fr",
+//     gap: "20px"
+// }
+//     to add inline styles you would use above const with
+//     style={comicsIndexStyles} on the <ul></ul> below
 
 export default function ComicsIndex() {
     return (
         <div>
-            <ul className="comics-list" style={comicsIndexStyles}>
+            <ul className={styles["comics-list"]}>
                 {comics.map(( comic ) => {
                     return (
                         <Comic

@@ -1,22 +1,20 @@
 import ComicDetail from "./ComicDetail"
 import Image from "next/image";
 import Button from "./Button"
+import styles from "../styles/Comics.module.css";
+
 
 export default function Comic({comic}) {
 
-const comicStyles = {
-    fontFamily: "Helvetica"
-}
-
     return (
-        <article style={comicStyles}>
-            <div>
-                <div>
+        <article className={styles["comic-item"]}>
+             <div className={styles["comic-item-inner"]}>
+                <div className={styles["comic-img-cont"]}>
                     <Image
                         src={comic.thumbnail}
                         alt={`${comic.title} poster`}
-                        height={400}
-                        width={300}
+                        fill
+                        className={styles["comic-img"]}
                     />
                     <Button></Button>
                 </div>
