@@ -1,5 +1,6 @@
 import ComicDetail from "./ComicDetail"
 import Image from "next/image";
+import Button from "./Button"
 
 export default function Comic({comic}) {
 
@@ -10,12 +11,15 @@ const comicStyles = {
     return (
         <article style={comicStyles}>
             <div>
-                <Image
-                    src={comic.thumbnail}
-                    alt={`${comic.title} poster`}
-                    height={400}
-                    width={300}
-                />
+                <div>
+                    <Image
+                        src={comic.thumbnail}
+                        alt={`${comic.title} poster`}
+                        height={400}
+                        width={300}
+                    />
+                    <Button></Button>
+                </div>
                 <h2>{comic.title}</h2>
                 <ComicDetail
                     issueNumber={comic.issueNumber}
