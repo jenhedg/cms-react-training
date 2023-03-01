@@ -1,5 +1,7 @@
 import Comic from "./Comic"
 
+
+
 const comics = [
     {
         "id": 100213,
@@ -511,15 +513,17 @@ const comics = [
 export default function ComicsList() {
     return (
         <div>
-            {/* {comics.map(( comic ) => {
-                return (
-                    <img src={comic.thumbnail}/>
-                )
-            })} */}
             <ul className="comics-list">
                 {comics.map(( comic ) => {
                     return (
-                        <Comic key={comic.id} comic={comic}></Comic>
+                        <Comic
+                            key={comic.id}
+                            comic={comic}
+                            issueNumber={comic.issueNumber}
+                            publishDate={comic.publishDate}
+                            creators={comic.creators}
+                        >
+                        </Comic>
                     )
                 })}
             </ul>

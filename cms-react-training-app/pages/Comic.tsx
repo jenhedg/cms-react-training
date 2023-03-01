@@ -1,14 +1,22 @@
-// import Button from "./Button"
-// import ComicDetail from "./ComicDetail"
+import ComicDetail from "./ComicDetail"
 
 export default function Comic({comic}) {
 
+const comicStyles = {
+    fontFamily: "Helvetica"
+}
+
     return (
-        <div>
-           <li key={comic.id}>
-                {comic.title}
-           </li>
-        </div>
+        <article style={comicStyles}>
+            <div>
+                <h2>{comic.title}</h2>
+                <ComicDetail
+                    issueNumber={comic.issueNumber}
+                    publishDate={comic.publishDate}
+                    creators={comic.creators}>
+                </ComicDetail>
+            </div>
+        </article>
     )
 }
 
