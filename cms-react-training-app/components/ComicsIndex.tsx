@@ -1,7 +1,5 @@
 import Comic from "./Comic"
 
-
-
 const comics = [
     {
         "id": 100213,
@@ -510,16 +508,16 @@ const comics = [
     }
   ]
 
-const comicsListStyles = {
+const comicsIndexStyles = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
     gap: "20px"
 }
 
-export default function ComicsList() {
+export default function ComicsIndex() {
     return (
         <div>
-            <ul className="comics-list" style={comicsListStyles}>
+            <ul className="comics-list" style={comicsIndexStyles}>
                 {comics.map(( comic ) => {
                     return (
                         <Comic
