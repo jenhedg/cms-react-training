@@ -510,10 +510,16 @@ const comics = [
     }
   ]
 
+const comicsListStyles = {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    gap: "20px"
+}
+
 export default function ComicsList() {
     return (
         <div>
-            <ul className="comics-list">
+            <ul className="comics-list" style={comicsListStyles}>
                 {comics.map(( comic ) => {
                     return (
                         <Comic
@@ -522,6 +528,7 @@ export default function ComicsList() {
                             issueNumber={comic.issueNumber}
                             publishDate={comic.publishDate}
                             creators={comic.creators}
+                            thumbnail={comic.thumbnail}
                         >
                         </Comic>
                     )
