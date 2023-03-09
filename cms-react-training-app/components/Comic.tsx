@@ -11,7 +11,7 @@ export default function Comic({comic}) {
              <div className={styles["comic-item-inner"]}>
                 <div className={styles["comic-img-cont"]}>
                     <Image
-                        src={comic.thumbnail}
+                        src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                         alt={`${comic.title} poster`}
                         fill
                         className={styles["comic-img"]}
@@ -21,7 +21,7 @@ export default function Comic({comic}) {
                 <h2>{comic.title}</h2>
                 <ComicDetail
                     issueNumber={comic.issueNumber}
-                    publishDate={comic.publishDate}
+                    publishDate={comic.dates[0].date}
                     creators={comic.creators}>
                 </ComicDetail>
             </div>
