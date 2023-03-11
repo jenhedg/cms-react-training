@@ -1,4 +1,12 @@
-export default function Details(comic) {
+type Props = {
+    creators: [],
+    issueNumber : number,
+    publishDate : string | number,
+    creator : {name: string},
+}
+
+
+export default function Details({creators, issueNumber, publishDate } : Props) {
     const getPubDate = () => {
         const monthNames = [
             "January",
@@ -14,15 +22,15 @@ export default function Details(comic) {
             "November",
             "December",
         ];
-        const date = new Date(comic.publishDate);
+        const date = new Date(publishDate);
         const month = monthNames[date.getMonth()];
         const dateNumber = date.getDate();
         const year = date.getFullYear();
         return `${month} ${dateNumber}, ${year}`;
     };
 
-    const getCreators = () => {
-        const creatorsArray = comic.creators.items.map((creator) => {
+    const getCreators = ()  => {
+        const creatorsArray = creators.items.map((creator : {name: string}) => {
             return creator.name;
         });
         const formatCreators =
@@ -32,7 +40,7 @@ export default function Details(comic) {
 
     return (
         <ul>
-            <li>Issue:{comic.issueNumber}</li>
+            <li>Issue:{issueNumber}</li>
             <li>Published: {getPubDate()}</li>
             <li>Creators: {getCreators()}</li>
         </ul>

@@ -3,26 +3,34 @@ import Image from "next/image";
 import Button from "./Button"
 import styles from "../styles/Comics.module.css";
 
+type Props = {
+    children: React.ReactNode
+    comic: any,
+    thumbnail: {path: string, extension: string},
+    title: string,
+    issueNumber: number,
+    creators: []
+}
 
-export default function Comic({comic}) {
+export default function Comic({comic, thumbnail, title, issueNumber, creators }: Props) {
 
     return (
         <article className={styles["comic-item"]}>
              <div className={styles["comic-item-inner"]}>
                 <div className={styles["comic-img-cont"]}>
                     <Image
-                        src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                        alt={`${comic.title} poster`}
+                        src={`${thumbnail.path}.${thumbnail.extension}`}
+                        alt={`${title} poster`}
                         fill
                         className={styles["comic-img"]}
                     />
                     <Button></Button>
                 </div>
-                <h2>{comic.title}</h2>
+                <h2>{title}</h2>
                 <ComicDetail
-                    issueNumber={comic.issueNumber}
+                    issueNumber={issueNumber}
                     publishDate={comic.dates[0].date}
-                    creators={comic.creators}>
+                    creators={creators}>
                 </ComicDetail>
             </div>
         </article>

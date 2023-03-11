@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import md5 from 'md5';
 
+
 const fetchComicsData = () => {
-    const [isLoading, setIsLoading] = useState(null);
-    const [data, setData] = useState(null);
-    const [serverError, setServerError] = useState(null);
+    const [isLoading, setIsLoading]  = useState<boolean | null>(null) ;
+    const [data, setData] = useState<any | null>(null);
+    const [serverError, setServerError] = useState<any>(null);
 
     const baseUrl = `https://gateway.marvel.com/v1/public/comics`;
     const publicKey = `${process.env.apiKeyPublic}`;
     const privateKey = `${process.env.apiKeyPrivate}`;
     const timeStamp =  Date.now();
     const hashValue = md5(timeStamp + privateKey + publicKey);
-    // const url = `${baseUrl}?apikey=${publicKey}&ts=${timeStamp}&hash=${hashValue}`;
 
     useEffect(() => {
         setIsLoading(true);
