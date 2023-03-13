@@ -1,13 +1,17 @@
-type Props = {
-    creators: [],
-    issueNumber : number,
-    publishDate : string | number,
-    creator : {name: string},
+import { Creator, CreatorItem } from "../types/shared_types";
+
+type DetailProps = {
+    issueNumber: number,
+    publishDate: string,
+    creators: Creator
 }
 
+type getCreatorsFn = () => string;
 
-export default function Details({creators, issueNumber, publishDate } : Props) {
-    const getPubDate = () => {
+type getPubDateFn = () => string;
+
+export default function Details({ issueNumber, publishDate, creators }: DetailProps)  {
+    const getPubDate: getPubDateFn = () => {
         const monthNames = [
             "January",
             "February",
@@ -29,13 +33,13 @@ export default function Details({creators, issueNumber, publishDate } : Props) {
         return `${month} ${dateNumber}, ${year}`;
     };
 
-    const getCreators = ()  => {
-        const creatorsArray = creators.items.map((creator : {name: string}) => {
-            return creator.name;
+    const getCreators: getCreatorsFn = () => {
+        const creatorsGroup = creators.items.map((creator) => {
+            return creator.name;``
         });
-        const formatCreators =
-            creatorsArray.length > 0 ? creatorsArray.join(", ") : ["N/A"];
-        return formatCreators;
+        const creatorsFormatted =
+            creatorsGroup.length > 0 ? creatorsGroup.join(", ") : "N/A";
+        return creatorsFormatted;
     };
 
     return (
