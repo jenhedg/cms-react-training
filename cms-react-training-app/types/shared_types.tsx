@@ -1,5 +1,4 @@
 export type ComicData = {
-	children: any,
     id: number,
     thumbnail: Thumbnail,
     title: string,

@@ -11,8 +11,12 @@ type ComicDataProps = {
 
 export default function Comic({ comicData }: ComicDataProps) {
 
+        if (!comicData) {
+        return null;
+    }
+
     return (
-        <article className={styles["comic-item"]}>
+        <article data-testid="comic" className={styles["comic-item"]}>
              <div className={styles["comic-item-inner"]}>
                 <div className={styles["comic-img-cont"]}>
                     <Image
@@ -23,7 +27,7 @@ export default function Comic({ comicData }: ComicDataProps) {
                     />
                     <Button></Button>
                 </div>
-                <h2>{comicData.title}</h2>
+                <h2 data-testid="title">{comicData.title}</h2>
                 <ComicDetail
                     issueNumber={comicData.issueNumber}
                     publishDate={comicData.dates[0].date}

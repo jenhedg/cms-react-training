@@ -44,9 +44,9 @@ export default function Details({ issueNumber, publishDate, creators }: DetailPr
 
     return (
         <ul>
-            <li>Issue:{issueNumber}</li>
-            <li>Published: {getPubDate()}</li>
-            <li>Creators: {getCreators()}</li>
+            <li data-testid="issueNumber">Issue: {issueNumber}</li>
+            <li data-testid="publishDate">Published: {getPubDate()}</li>
+            <li data-testid="creators">Creators: {getCreators()}</li>
         </ul>
     )
 }
