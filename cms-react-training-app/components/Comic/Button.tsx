@@ -1,4 +1,4 @@
-import styles from "../styles/Comics.module.css";
+import styles from "../../styles/Comics.module.css";
 
 
 export default function Button() {

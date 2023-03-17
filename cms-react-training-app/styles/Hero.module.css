@@ -1,0 +1,41 @@
+.hero {
+    position: relative;
+    background-image: url(../assets/hero-photo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    width: 100vw;
+}
+
+.hero::after {
+    content: '';
+    background-image: url(../assets/halftone.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 176px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+.hero__content {
+    background-color: #C24868E6;
+    padding: 14px
+}
+
+.hero__content--title  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 61px;
+    text-shadow: 3px 3px 3px #000;
+}
+
+.heroImg {
+    width: 100%;
+}
+

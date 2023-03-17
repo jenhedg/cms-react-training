@@ -1,8 +1,8 @@
 import ComicDetail from "./ComicDetail"
 import Image from "next/image";
 import Button from "./Button"
-import styles from "../styles/Comics.module.css";
-import { ComicData } from "../types/shared_types";
+import styles from "../../styles/Comics.module.css";
+import { ComicData } from "../../types/shared_types";
 
 
 type ComicDataProps = {

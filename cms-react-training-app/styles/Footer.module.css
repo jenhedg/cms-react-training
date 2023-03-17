@@ -1,0 +1,27 @@
+.footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 30px;
+    background-color: #222222;
+}
+
+/*Nav*/
+.footer__nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 1.125rem;
+    list-style-type: none;
+
+}
+
+.footer__nav ul,
+.footer__legal {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}

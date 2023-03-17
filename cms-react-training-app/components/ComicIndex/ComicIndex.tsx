@@ -1,7 +1,7 @@
-import Comic from "./Comic"
-import styles from "../styles/Comics.module.css";
+import Comic from "../Comic/Comic"
+import styles from "../../styles/Comics.module.css";
 import fetchComicsData from "@/hooks/fetchComicsData";
-import { ComicData } from "../types/shared_types";
+import { ComicData } from "../../types/shared_types";
 
 
 export default function ComicsIndex() {

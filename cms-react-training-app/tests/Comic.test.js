@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { render, cleanup, fireEvent } from "@testing-library/react";
-import Comic from "./Comic"
+import { render, cleanup } from "@testing-library/react";
+import Comic from "../components/Comic/Comic"
 
 
 afterEach(cleanup);

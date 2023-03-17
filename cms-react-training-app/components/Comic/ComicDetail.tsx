@@ -1,4 +1,4 @@
-import { Creator, CreatorItem } from "../types/shared_types";
+import { Creator, CreatorItem } from "../../types/shared_types";
 
 type DetailProps = {
     issueNumber: number,
