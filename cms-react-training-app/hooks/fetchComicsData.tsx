@@ -30,7 +30,7 @@ const fetchComicsData = () => {
 
         fetchData();
     },[]);
-    console.log(data)
+    // console.log(data)
     return { isLoading, data, serverError };
 }
 

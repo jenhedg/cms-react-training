@@ -5,6 +5,7 @@ import { Header } from '@/components/Header/Header';
 import { Hero } from '@/components/Hero/Hero';
 import ComicsIndex from '../components/ComicIndex/ComicIndex';
 import { Footer } from '@/components/Footer/Footer';
+import AppContextProvider  from "../state/AppContext";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,12 +20,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <script src="https://kit.fontawesome.com/867df664d5.js" crossOrigin="anonymous" defer></script>
       </Head>
-      <Header/>
-      <main className={styles.main}>
-        <Hero/>
-        <ComicsIndex></ComicsIndex>
-      </main>
-      <Footer/>
+      <AppContextProvider>
+          <Header/>
+          <main className={styles.main}>
+            <Hero/>
+            <ComicsIndex></ComicsIndex>
+          </main>
+        <Footer/>
+      </AppContextProvider>
     </>
   )
 }
