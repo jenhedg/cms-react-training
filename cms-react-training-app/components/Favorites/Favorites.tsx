@@ -8,7 +8,6 @@ import styles from "../../styles/Favorites.module.css";
 export function Favorites() {
     const { favorites, toggleFavorite } = useAppContext();
 	const favoritesArr: ComicData[] = Object.values(favorites);
-    console.log(favoritesArr);
 
         return (
             <div className={styles["favorites"]}>
@@ -16,7 +15,7 @@ export function Favorites() {
                 {favoritesArr.length ? (
                     <div className={styles["favorites__inner"]}>
                         {favoritesArr.map(item =>
-                            <div className={styles["favorites__item"]}>
+                            <div key={item.id} className={styles["favorites__item"]}>
                                 <div className={styles["favorites__content--img"]}>
                                     <button
                                         onClick={() => toggleFavorite({ id: item.id })}
@@ -34,7 +33,7 @@ export function Favorites() {
                                 </div>
                                 <div className={styles["favorites__content--text"]}>
                                     <h4>{item.title}</h4>
-                                    <p><span>Issue:</span>{item.issueNumber}</p>
+                                    <p><span>Issue:</span> {item.issueNumber}</p>
                                 </div>
                             </div>
                         )}
