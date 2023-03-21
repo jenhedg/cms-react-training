@@ -2,13 +2,11 @@ import Image from "next/image"
 import logo from "assets/logo.png";
 import styles from "../../styles/Header.module.css";
 import { useAppContext } from "state/AppContext";
+import AppContextProvider  from "../../state/AppContext";
 
 
 export function Header() {
 	const { favorites } = useAppContext();
-
-    console.log("faves", favorites);
-
 
     return (
         <header className={styles["header"]}>

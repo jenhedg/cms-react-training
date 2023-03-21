@@ -4,8 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1034px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 /*Comic*/
@@ -16,6 +17,10 @@
 
 .comic-item-inner {
     position: relative;
+}
+
+.comic-item h2 {
+    font-size: 18px ;
 }
 
 /*Comic Img*/
@@ -30,6 +35,17 @@
     object-fit: cover;
     z-index: 1;
 }
+
+.comic-item ul {
+    list-style-type: none;
+    font-size: 1rem;
+}
+
+.comic-item ul li span {
+    font-weight: bold;
+}
+
+
 
 /*Comic Button*/
 .comic-button {
@@ -59,7 +75,7 @@
 @media screen and (min-width: 64em) {
     .comics-list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 20px;
         align-items: flex-start;
     }

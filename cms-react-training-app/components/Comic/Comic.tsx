@@ -13,12 +13,20 @@ export default function Comic({ comicData }: ComicDataProps) {
     if (!comicData) { return null;}
 
     const id = comicData.id;
+    const title = comicData.title;
+    const thumbnail = comicData.thumbnail;
+    const issueNumber = comicData.issueNumber;
+
 
 	const { toggleFavorite, favorites } = useAppContext();
 
 	const faveClickHandler = () => {
-        toggleFavorite({id});
-
+        toggleFavorite({
+            id,
+            title,
+            thumbnail,
+            issueNumber
+        });
 	};
 
     return (
@@ -29,7 +37,8 @@ export default function Comic({ comicData }: ComicDataProps) {
                         <Image
                             src={`${comicData.thumbnail.path}.${comicData.thumbnail.extension}`}
                             alt={`${comicData.title} poster`}
-                            fill
+                            width={183}
+						    height={276}
                             className={styles["comic-img"]}
                         />
                         <Button onClick={faveClickHandler} favorited={id in favorites}/>

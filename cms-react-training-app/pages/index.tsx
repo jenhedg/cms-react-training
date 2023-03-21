@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Comics.module.css'
 import { Header } from '@/components/Header/Header';
 import { Hero } from '@/components/Hero/Hero';
 import ComicsIndex from '../components/ComicIndex/ComicIndex';
+import { Favorites } from '../components/Favorites/Favorites';
 import { Footer } from '@/components/Footer/Footer';
 import AppContextProvider  from "../state/AppContext";
+import styles from '../styles/IndexPage.module.css'
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,9 +24,10 @@ export default function Home() {
       </Head>
       <AppContextProvider>
           <Header/>
-          <main className={styles.main}>
-            <Hero/>
+          <Hero/>
+          <main className={styles["content"]}>
             <ComicsIndex></ComicsIndex>
+            <Favorites/>
           </main>
         <Footer/>
       </AppContextProvider>
