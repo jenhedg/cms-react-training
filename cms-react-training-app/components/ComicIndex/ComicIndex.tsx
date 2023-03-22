@@ -22,29 +22,32 @@ export default function ComicsIndex() {
         console.log("test");
 	}, [currentPage]);
 
-    console.log('loading', isLoading, 'serverError',serverError, );
     return (
         <div className={styles["comics"]}>
             { isLoading ? (
-                <div> Loading...</div>
+                <div className={styles["comics__fallback"]}>
+                    <div>Loading...</div>
+                </div>
             ) : serverError ? (
                 <div> Error fetching comics</div>
             ) : (
-                <div className={styles["comics___fallback"]}>
-                    <ul className={styles["comics-list"]}>
-                        {data?.results?.map(( comic : ComicData) => {
-                            return (
-                                <Comic key ={comic.id} comicData={comic}/>
-                            )
-                        })}
-                    </ul>
-                    {!isLoading && (
-                        <Pager
-                            prevPage={prevPage}
-                            nextPage={nextPage}
-                            display={`${pageDisplay}`}
-                        />
-                    )}
+                <div>
+                    <div className={styles["comics__fallback"]}>
+                        <ul className={styles["comics-list"]}>
+                            {data?.results?.map(( comic : ComicData) => {
+                                return (
+                                    <Comic key ={comic.id} comicData={comic}/>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                        {!isLoading && (
+                            <Pager
+                                prevPage={prevPage}
+                                nextPage={nextPage}
+                                display={`${pageDisplay}`}
+                            />
+                        )}
                 </div>
             )}
         </div>

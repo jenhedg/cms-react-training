@@ -1,6 +1,7 @@
 .pager {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.125rem;
+    color: #222;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +11,7 @@
 
 .pager .prev,
 .pager .next {
-    background-color:white;
+    background-color:#222;
     border-radius: 50%;
     height: 35px;
     width: 35px;
@@ -20,6 +21,6 @@
 
 .pager .prev i,
 .pager .next i {
-    color: #222;
+    color: #fff;
     font-size: 18px;
 }

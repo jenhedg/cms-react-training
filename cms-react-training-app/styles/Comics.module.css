@@ -1,4 +1,5 @@
 .comics__fallback {
+    display: block;
     min-width: 1034px;
     min-height: 1000px;
 }
@@ -25,7 +26,8 @@
 }
 
 .comic-item h2 {
-    font-size: 18px ;
+    font-size: 1.125rem;
+    color: #222;
 }
 
 /*Comic Img*/
@@ -44,6 +46,7 @@
 .comic-item ul {
     list-style-type: none;
     font-size: 1rem;
+    color: #222;
 }
 
 .comic-item ul li span {
