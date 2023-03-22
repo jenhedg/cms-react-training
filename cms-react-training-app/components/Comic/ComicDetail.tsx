@@ -1,4 +1,6 @@
 import { Creator, CreatorItem } from "../../types/shared_types";
+import styles from "@/styles/ComicDetail.module.css";
+
 
 type DetailProps = {
     issueNumber: number,
@@ -43,10 +45,10 @@ export default function Details({ issueNumber, publishDate, creators }: DetailPr
     };
 
     return (
-        <ul>
-            <li data-testid="issueNumber"><span>Issue:</span> {issueNumber}</li>
-            <li data-testid="publishDate"><span>Published:</span> {getPubDate()}</li>
-            <li data-testid="creators"><span>Creators:</span> {getCreators()}</li>
+        <ul className={styles.detail__list}>
+            <li data-testid="issueNumber" className={styles.detail__item}><span>Issue:</span> {issueNumber}</li>
+            <li data-testid="publishDate" className={styles.detail__item}><span>Published:</span> {getPubDate()}</li>
+            <li data-testid="creators" className={styles.detail__item}><span>Creators:</span> {getCreators()}</li>
         </ul>
     )
 }

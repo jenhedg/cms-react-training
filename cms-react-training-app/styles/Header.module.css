@@ -9,13 +9,13 @@
     z-index: 1;
 }
 
-.header__wrap {
+.headerWrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header__content {
+.headerContent {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
 }
 
 /*Nav*/
-.nav ul {
+.navContent ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,6 @@
 }
 
 /*Faves Btn*/
-.faves__btn {
+.favesBtn {
     margin-right: 8px;
-
 }

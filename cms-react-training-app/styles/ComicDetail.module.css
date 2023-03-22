@@ -1,0 +1,9 @@
+.detail__list {
+    list-style-type: none;
+    font-size: 1rem;
+    color: #222;
+}
+
+.detail__item span {
+    font-weight: bold;
+}

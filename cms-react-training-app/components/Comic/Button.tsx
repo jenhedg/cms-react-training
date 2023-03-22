@@ -1,16 +1,15 @@
-import styles from "../../styles/Comics.module.css";
-import { useAppContext } from "state/AppContext";
+import styles from "../../styles/Button.module.css";
 
 type Props = {
-	onClick: () => void;
+    onClick: () => void;
 };
 
 export default function Button({onClick}): Props {
-	const { favorites }:{ favorites: {} } = useAppContext();
+	// const { favorites }:{ favorites: {} } = useAppContext();
 
     return (
         <button
-            className={`${styles["comic-button"]}`}
+            className={styles.comicButton}
 			onClick={onClick}
         >
         </button>

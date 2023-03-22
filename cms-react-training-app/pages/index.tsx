@@ -8,8 +8,6 @@ import { Footer } from '@/components/Footer/Footer';
 import AppContextProvider  from "../state/AppContext";
 import styles from '../styles/IndexPage.module.css'
 
-
-
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -25,7 +23,7 @@ export default function Home() {
       <AppContextProvider>
           <Header/>
           <Hero/>
-          <main className={styles["content"]}>
+          <main className={styles.comicsContent}>
             <ComicsIndex></ComicsIndex>
             <Favorites/>
           </main>

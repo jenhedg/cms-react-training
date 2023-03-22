@@ -10,16 +10,16 @@ export function Favorites() {
 	const favoritesArr: ComicData[] = Object.values(favorites);
 
         return (
-            <div className={styles["favorites"]}>
-                <h3 className={styles["favorites__title"]}>Favorites</h3>
+            <div className={styles.favorites}>
+                <h3 className={styles.favorites__title}>Favorites</h3>
                 {favoritesArr.length ? (
-                    <div className={styles["favorites__inner"]}>
+                    <div className={styles.favorites__inner}>
                         {favoritesArr.map(item =>
-                            <div key={item.id} className={styles["favorites__item"]}>
+                            <div key={item.id} className={styles.favorites__item}>
                                 <div className={styles["favorites__content--img"]}>
                                     <button
                                         onClick={() => toggleFavorite({ id: item.id })}
-                                        className={styles["favorites__btn"]}
+                                        className={styles.favorites__btn}
                                     >
                                         <i className="fas fa-times-circle"></i>
                                     </button>
@@ -28,7 +28,7 @@ export function Favorites() {
                                         alt={item.title}
                                         width={50}
                                         height={75}
-                                        className={styles["favorites__img"]}
+                                        className={styles.favorites__img}
                                     />
                                 </div>
                                 <div className={styles["favorites__content--text"]}>

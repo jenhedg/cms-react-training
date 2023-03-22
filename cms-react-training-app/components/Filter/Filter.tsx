@@ -1,4 +1,5 @@
 import { useAppContext } from "state/AppContext";
+import styles from "styles/Filter.module.css";
 
 type Props = {
 	name: string;
@@ -21,8 +22,9 @@ export default function Filter({ name, options }: Props) {
 	};
 
 	return (
-		<div className="container">
+		<div className={styles.container}>
 			<select
+				className={styles.select}
 				name={name}
 				id=""
 				onChange={handleChange}
@@ -31,7 +33,6 @@ export default function Filter({ name, options }: Props) {
 						? selectedFilterValue
 						: ""
 				}
-				className="select"
 			>
 				<option value="">{name}</option>
 				{options.map(({ name, value }) => (
@@ -40,7 +41,10 @@ export default function Filter({ name, options }: Props) {
 					</option>
 				))}
 			</select>
-			<i aria-hidden className="fas fa-angle-down"></i>
+			<i aria-hidden
+				className="fas fa-angle-down"
+				style={{ position: 'absolute', right : 32, 'pointerEvents' : 'none' }}
+			></i>
 		</div>
 	);
 }

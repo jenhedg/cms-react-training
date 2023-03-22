@@ -9,19 +9,19 @@ export function Header() {
 	const { favorites } = useAppContext();
 
     return (
-        <header className={styles["header"]}>
-            <div className={styles["header__wrap"]}>
+        <header className={styles.header}>
+            <div className={styles.headerWrap}>
                 <Image src={logo} width={106} height={106} alt="Comic Closet" />
-                <div className={styles["header__content"]}>
-                    <nav className={styles["nav"]}>
+                <div className={styles.headerContent}>
+                    <nav className={styles.navContent}>
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Shop</a></li>
                         </ul>
                     </nav>
-                    <div className={styles["faves"]}>
-                        <button className={styles["faves__btn"]}>My Favorites</button>
-                        <span className={styles["faves__counter"]}>
+                    <div className={styles.faves}>
+                        <button className={styles.favesBtn}>My Favorites</button>
+                        <span className={styles.favesCounter}>
                             ({Object.keys(favorites).length})
                         </span>
                     </div>

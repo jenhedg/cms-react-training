@@ -1,7 +1,44 @@
-.content {
+.comicsFallback {
+    display: block;
+    min-width: 1034px;
+    min-height: 1000px;
+}
+
+.comicsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1034px;
+    margin: 0 auto;
+    padding: 40px 20px 0;
+}
+
+.comicsContent {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     background-color: white;
+}
 
+@media screen and (min-width: 40em) {
+    .comicsList {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        align-items: flex-start;
+        padding: 40px 20px
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .comicsList {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 90em) {
+    .comicsList {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
