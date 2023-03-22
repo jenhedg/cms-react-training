@@ -8,23 +8,31 @@ import Comic from "../Comic/Comic"
 import  { Pager }  from "../Pager/Pager";
 import styles from "../../styles/Comics.module.css";
 
-
-
 export default function ComicsIndex() {
-    const { isLoading, data, serverError, fetchUrl, total} = fetchComicsData();
 
-    const [currentPage, setCurrentPage] = useState(1);
-    const [url, setUrl] = useState(fetchUrl);
+    const { isLoading, data, serverError, fetchUrl, total, fetchData} = fetchComicsData();
+    console.log("data", data);
 
+    const [currentPage, setCurrentPage] = useState(0);
     const [offset, end, pageDisplay] = usePager(total, currentPage);
 
     const prevPage = () => currentPage !== 1 && setCurrentPage(currentPage - 1);
-    const nextPage = () => end !== total && setCurrentPage(currentPage + 1);
 
+    //refetch data and decrement offset
+    //if 0 offset do nothing
+    const nextPage = () => end !== total && setCurrentPage(currentPage + 1);
+    //refetch data and increment offset
+    //if max results do nothing
+
+    console.log("currentPage", currentPage);
 
     useEffect(() => {
-		setUrl(`${fetchUrl}&offset=${offset}}`);
+        fetchData(currentPage)
+    console.log("test");
+
 	}, [currentPage]);
+
+    // if(!data ) {return}
 
     return (
         <div className={styles["comics"]}>
@@ -35,7 +43,7 @@ export default function ComicsIndex() {
             ) : (
                 <div className="indexWrap">
                     <ul className={styles["comics-list"]}>
-                        {data?.map(( comic : ComicData) => {
+                        {data?.results?.map(( comic : ComicData) => {
                             return (
                                 <Comic key ={comic.id} comicData={comic}/>
                             )
