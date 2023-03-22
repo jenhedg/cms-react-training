@@ -19,7 +19,6 @@ const fetchComicsData = () => {
         const fetchData = async (pageOffset : number, filter : any) => {
             setServerError(false);
             setIsLoading(true);
-            console.log("filter", filter);
 
             let fetchUrl = "";
 

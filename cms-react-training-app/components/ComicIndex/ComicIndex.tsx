@@ -6,6 +6,7 @@ import { useAppContext } from "state/AppContext";
 import { usePager } from '@/hooks/usePager';
 import Comic from "../Comic/Comic";
 import { FilterForm } from "../Filter/Index";
+import { MobileFilterBar } from "../MobileFilter/MobileFilter";
 import  { Pager }  from "../Pager/Pager";
 import styles from "@/styles/IndexPage.module.css";
 
@@ -32,7 +33,10 @@ export default function ComicsIndex() {
                 <div> Error fetching comics</div>
             ) : (
                 <div>
+                <MobileFilterBar />
+				<div className={styles.comicsHideMobile}>
                     <FilterForm/>
+				</div>
                     <div className={styles.comics__fallback}>
                         <ul className={styles.comicsList}>
                             {data?.results?.map(( comic : ComicData) => {

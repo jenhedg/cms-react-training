@@ -21,6 +21,10 @@
     background-color: white;
 }
 
+.comicsHideMobile {
+    display: none;
+}
+
 @media screen and (min-width: 40em) {
     .comicsList {
         display: grid;
@@ -28,6 +32,10 @@
         gap: 20px;
         align-items: flex-start;
         padding: 40px 20px
+    }
+
+    .comicsHideMobile {
+        display: block;
     }
 }
 

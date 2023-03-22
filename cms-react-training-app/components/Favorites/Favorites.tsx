@@ -3,8 +3,6 @@ import { ComicData } from '../../types/shared_types';
 import Image from "next/image";
 import styles from "../../styles/Favorites.module.css";
 
-
-
 export function Favorites() {
     const { favorites, toggleFavorite } = useAppContext();
 	const favoritesArr: ComicData[] = Object.values(favorites);
