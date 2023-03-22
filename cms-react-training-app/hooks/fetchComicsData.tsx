@@ -7,44 +7,48 @@ const fetchComicsData = () => {
     const [serverError, setServerError] = useState<boolean>(false);
     const [total, setTotal] = useState<number>(0);
     const [limit, setLimit] = useState<number>(0);
+    // const [filter, setFilter] = useState<[]>([]);
 
-    const baseUrl = `https://gateway.marvel.com/v1/public/comics`;
+    const baseUrl = `https://gateway.marvel.com/v1/public/`;
     const publicKey = `${process.env.apiKeyPublic}`;
     const privateKey = `${process.env.apiKeyPrivate}`;
     const timeStamp =  Date.now();
     const hashValue = md5(timeStamp + privateKey + publicKey);
-    const fetchUrl = `${baseUrl}?apikey=${publicKey}&ts=${timeStamp}&hash=${hashValue}&limit=15`;
+    const fetchUrlInitial = `${baseUrl}/comics?apikey=${publicKey}&ts=${timeStamp}&hash=${hashValue}&limit=15`;
 
-
-        const fetchData = async (pageOffset : number) => {
+        const fetchData = async (pageOffset : number, filter : any) => {
             setServerError(false);
             setIsLoading(true);
-            console.log('pageOffset', pageOffset);
+            console.log("filter", filter);
+
+            let fetchUrl = "";
+
+            if (filter.length > 0) {
+                fetchUrl = `${baseUrl}${filter[0]}/${filter[1]}/comics?apikey=${publicKey}&ts=${timeStamp}&hash=${hashValue}&limit=15`;
+            } else {
+                fetchUrl = `${fetchUrlInitial}&offset=${pageOffset * 15}`;
+            }
 
             try {
-                console.log(fetchUrl);
-                const results = await fetch(`${fetchUrl}&offset=${pageOffset * 15}`)
+                const results = await fetch(fetchUrl)
                     .then(res => res.json())
                     .then(res => {
-                        console.log('sucess', res);
                         if (!res.status === 'Ok') {
                             setServerError(true);
                             setIsLoading(false);
                             return;
                         }
-                        console.log('data', res.data)
                         setData(res.data);
                         setIsLoading(false);
                         setTotal(res.data.total)
                     })
 
             } catch (error) {
-                console.log('server error', error);
                 setServerError(true);
                 setIsLoading(false);
             }
         };
-    return { isLoading, data, serverError, total, limit, fetchData};
+    return { isLoading, data, serverError, total, limit, fetchData, fetchUrlInitial};
 }
 
 export default fetchComicsData;
