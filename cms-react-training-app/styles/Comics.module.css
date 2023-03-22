@@ -1,3 +1,8 @@
+.comics__fallback {
+    min-width: 1034px;
+    min-height: 1000px;
+}
+
 /*Comics Index*/
 .comics-list {
     display: flex;

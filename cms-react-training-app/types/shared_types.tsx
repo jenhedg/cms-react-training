@@ -25,7 +25,7 @@ export type CreatorItem = {
     name: string,
 }
 
-export type Pager = {
+export type PagerProps = {
 	display: string;
 	prevPage: Function;
 	nextPage: Function;

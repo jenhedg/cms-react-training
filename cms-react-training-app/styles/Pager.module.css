@@ -1,0 +1,25 @@
+.pager {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 64px 0;
+}
+
+.pager .prev,
+.pager .next {
+    background-color:white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: none;
+
+}
+
+.pager .prev i,
+.pager .next i {
+    color: #222;
+    font-size: 18px;
+}
