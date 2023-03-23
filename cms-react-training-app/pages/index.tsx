@@ -50,7 +50,9 @@ export default function Home() {
           <Hero/>
           <main className={styles.comicsContent}>
             <ComicsIndex></ComicsIndex>
-            <Favorites/>
+            <div className={styles.comicsHideMobile}>
+              <Favorites/>
+            </div>
           </main>
         <Footer/>
       </AppContextProvider>

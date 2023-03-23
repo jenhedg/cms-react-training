@@ -1,3 +1,7 @@
+.content {
+    background-color: #fff;
+}
+
 .comicItem {
     --color-text: #222222;
     --font-karla: Arial, Helvetica, sans-serif;

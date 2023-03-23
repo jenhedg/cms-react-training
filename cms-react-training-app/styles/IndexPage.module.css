@@ -1,3 +1,12 @@
+.comicsContent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 0 20px;
+    width: 100%;
+}
+
 .comicsFallback {
     display: block;
     min-width: 1034px;
@@ -11,14 +20,7 @@
     align-items: center;
     max-width: 1034px;
     margin: 0 auto;
-    padding: 40px 20px 0;
-}
-
-.comicsContent {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: white;
+    padding: 40px  0;
 }
 
 .comicsHideMobile {
@@ -28,22 +30,24 @@
 @media screen and (min-width: 40em) {
     .comicsList {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         align-items: flex-start;
         padding: 40px 20px
     }
-
-
 }
 
 @media screen and (min-width: 64em) {
+    .comicsContent {
+        padding: 0 20px;
+    }
+
     .comicsHideMobile {
         display: block;
     }
 
     .comicsList {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 

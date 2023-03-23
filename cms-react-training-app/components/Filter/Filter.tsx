@@ -21,7 +21,7 @@ export default function Filter({ name, options }: Props) {
 	};
 
 	return (
-		<div className={styles.container} >
+		<div className={styles.containerFilter} >
 			<select
 				className={styles.select}
 				name={name}

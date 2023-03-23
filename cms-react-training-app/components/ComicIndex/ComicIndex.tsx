@@ -7,9 +7,9 @@ import { usePager } from '@/hooks/usePager';
 import Comic from "../Comic/Comic";
 import { FilterForm } from "../Filter/Index";
 import { MobileFilterBar } from "../MobileFilter/MobileFilter";
+import { Favorites } from '../Favorites/Favorites';
 import  { Pager }  from "../Pager/Pager";
 import styles from "@/styles/IndexPage.module.css";
-
 
 export default function ComicsIndex() {
     const { isLoading, data, serverError, total, fetchData} = fetchComicsData();
@@ -24,20 +24,17 @@ export default function ComicsIndex() {
 	}, [currentPage, filter]);
 
     return (
-        <div>
+        <div className={styles.indexContainer}>
             { isLoading ? (
-                <div className={styles.comicsFallback}>
                     <div>Loading...</div>
-                </div>
             ) : serverError ? (
                 <div> Error fetching comics</div>
             ) : (
                 <div>
-                <MobileFilterBar />
-				<div className={styles.comicsHideMobile}>
-                    <FilterForm/>
-				</div>
-                    <div className={styles.comics__fallback}>
+                    <MobileFilterBar />
+                    <div className={styles.comicsHideMobile}>
+                        <FilterForm/>
+                    </div>
                         <ul className={styles.comicsList}>
                             {data?.results?.map(( comic : ComicData) => {
                                 return (
@@ -45,8 +42,7 @@ export default function ComicsIndex() {
                                 )
                             })}
                         </ul>
-                    </div>
-                    {!isLoading && (
+                        {!isLoading && (
                         <Pager
                             prevPage={prevPage}
                             nextPage={nextPage}

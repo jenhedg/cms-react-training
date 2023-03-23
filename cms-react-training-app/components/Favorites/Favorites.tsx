@@ -32,7 +32,7 @@ export function Favorites() {
                                     />
                                 </div>
                                 <div className={styles["favorites__content--text"]}>
-                                    <h4>{item.title}</h4>
+                                    <h4 className={styles.favoritesItemTitle} >{item.title}</h4>
                                     <p><span>Issue:</span> {item.issueNumber}</p>
                                 </div>
                             </div>

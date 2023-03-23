@@ -41,8 +41,9 @@ export function MobileFilterBar() {
 					onClick={() => handleClick("filter")}
 					className={styles.bottomButton}
 				>
-					Hide Filter 
-					<FontAwesomeIcon icon="filter" />
+					<div>Hide Filter</div>
+
+					<FontAwesomeIcon className="{styles.iconHide}" icon="filter" />
 				</button>
 			</Dropdown>
 			<Dropdown show={displayState === "favorites"} containerStyles={styles.filterFavoritesCont}>
@@ -51,8 +52,8 @@ export function MobileFilterBar() {
 					onClick={() => handleClick("favorites")}
 					className={styles.bottomButton}
 				>
-					Hide Favorites
-					<FontAwesomeIcon icon="bolt" />
+					<div>Hide Favorites</div>
+					<FontAwesomeIcon className={styles.iconClose} icon="bolt" />
 				</button>
 			</Dropdown>
 		</div>
