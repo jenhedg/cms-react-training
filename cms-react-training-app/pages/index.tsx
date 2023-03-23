@@ -6,7 +6,32 @@ import ComicsIndex from '../components/ComicIndex/ComicIndex';
 import { Favorites } from '../components/Favorites/Favorites';
 import { Footer } from '@/components/Footer/Footer';
 import AppContextProvider  from "../state/AppContext";
-import styles from '../styles/IndexPage.module.css'
+import styles from '../styles/IndexPage.module.css';
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import {
+	faBolt,
+  faBoltLightning,
+	faFilter,
+	faTimes,
+	faAngleLeft,
+	faAngleRight,
+	faBars,
+	faAngleDown,
+} from "@fortawesome/free-solid-svg-icons";
+// Using this syntax, because error is caused using other syntax for whatever reason
+const { library, config } = require("@fortawesome/fontawesome-svg-core");
+
+config.autoAddCss = false;
+library.add(
+	faBolt,
+  faBoltLightning,
+	faFilter,
+	faTimes,
+	faAngleLeft,
+	faAngleRight,
+	faBars,
+	faAngleDown
+);
 
 const inter = Inter({ subsets: ['latin'] })
 

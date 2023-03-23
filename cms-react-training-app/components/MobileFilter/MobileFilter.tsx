@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FilterForm } from "../Filter/Index";
 import { Favorites }  from "../Favorites/Favorites";
 import { Dropdown } from "../Dropdown/Index";
@@ -23,7 +24,7 @@ export function MobileFilterBar() {
 					className={styles.buttonBarButton}
 				>
 					{displayState === "filter" ? "Hide" : ""} Filter{" "}
-                    <i className="fas fa-filter"></i>
+					<FontAwesomeIcon icon="filter" />
 				</button>
 				{/*Faves*/}
 				<button
@@ -31,8 +32,7 @@ export function MobileFilterBar() {
 					className={styles.buttonBarButton}
 				>
 					{displayState === "favorites" ? "Hide" : "Show"} Favorites{" "}
-					<i className="fas fa-bolt"></i>
-
+					<FontAwesomeIcon icon="bolt" />
 				</button>
 			</div>
 			<Dropdown show={displayState === "filter"} containerStyles={styles.filterFavoritesCont}>
@@ -42,7 +42,7 @@ export function MobileFilterBar() {
 					className={styles.bottomButton}
 				>
 					Hide Filter 
-                    <i className="fas fa-filter"></i>
+					<FontAwesomeIcon icon="filter" />
 				</button>
 			</Dropdown>
 			<Dropdown show={displayState === "favorites"} containerStyles={styles.filterFavoritesCont}>
@@ -52,7 +52,7 @@ export function MobileFilterBar() {
 					className={styles.bottomButton}
 				>
 					Hide Favorites
-					<i className="fas fa-bolt"></i>
+					<FontAwesomeIcon icon="bolt" />
 				</button>
 			</Dropdown>
 		</div>

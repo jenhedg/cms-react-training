@@ -30,6 +30,10 @@
 	transform: translateY(-50%);
 	pointer-events: none;
 	font-size: 14px;
+	position: absolute;
+	top: 32px;
+	right: 82px;
+	pointer-events: none;
 }
 
 @media (min-width: 64em) {
@@ -52,6 +56,13 @@
 	line-height: 1.1;
 	flex-shrink: 0;
 	padding-left: 20px;
+}
+
+@media screen and (min-width: 40em) {
+	.icon {
+		top: 32px;
+		right:30px;
+	}
 }
 
 @media (min-width: 64em) {

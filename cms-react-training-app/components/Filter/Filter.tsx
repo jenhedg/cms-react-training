@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useAppContext } from "state/AppContext";
 import styles from "styles/Filter.module.css";
 
@@ -39,10 +40,7 @@ export default function Filter({ name, options }: Props) {
 					</option>
 				))}
 			</select>
-			<i aria-hidden
-				className="fas fa-angle-down"
-				style={{ position: 'absolute', right : 32, 'pointerEvents' : 'none' }}
-			></i>
+			<FontAwesomeIcon icon="angle-down" className={styles.icon}/>
 		</div>
 	);
 }

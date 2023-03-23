@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useAppContext } from "state/AppContext";
 import { ComicData } from '../../types/shared_types';
 import Image from "next/image";
@@ -19,7 +20,8 @@ export function Favorites() {
                                         onClick={() => toggleFavorite({ id: item.id })}
                                         className={styles.favorites__btn}
                                     >
-                                        <i className="fas fa-times-circle"></i>
+			                            <FontAwesomeIcon icon="fa-times" />
+
                                     </button>
                                     <Image
                                         src={`${item.thumbnail.path}.${item.thumbnail.extension}`}

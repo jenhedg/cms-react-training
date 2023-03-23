@@ -34,12 +34,14 @@
         padding: 40px 20px
     }
 
-    .comicsHideMobile {
-        display: block;
-    }
+
 }
 
 @media screen and (min-width: 64em) {
+    .comicsHideMobile {
+        display: block;
+    }
+
     .comicsList {
         grid-template-columns: repeat(4, 1fr);
     }
