@@ -1,4 +1,7 @@
 .hero {
+    --color-bg:  #C24868E6;
+    --color-shadow:  #000;
+
     position: relative;
     background-image: url(../assets/hero-photo.png);
     background-repeat: no-repeat;
@@ -6,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 650px;
+    height: 450px;
     width: 100vw;
 }
 
@@ -19,23 +22,36 @@
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -6px;
 }
 
-
 .heroContent {
-    background-color: #C24868E6;
-    padding: 14px
+    background-color: var(--color-bg);
+    padding: 14px 29.75px;
 }
 
 .heroTitle  {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--montserrat);
     font-weight: 900;
-    font-size: 61px;
-    text-shadow: 3px 3px 3px #000;
+    font-size: 1.6875rem;
+    text-shadow: 3px 3px 3px var(--color-shadow);
 }
 
 .heroImg {
     width: 100%;
+}
+
+@media screen and (min-width: 64em) {
+    .hero {
+        height: 650px;
+    }
+
+    .heroContent {
+        padding: 14px
+    }
+
+    .heroTitle {
+        font-size: 3.8125rem;
+    }
 }
 

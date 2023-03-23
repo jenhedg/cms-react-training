@@ -1,7 +1,9 @@
 .detail__list {
+    --color-text: #222;
+
     list-style-type: none;
     font-size: 1rem;
-    color: #222;
+    color: var(--color-text);
 }
 
 .detail__item span {

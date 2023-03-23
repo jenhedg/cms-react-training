@@ -1,9 +1,6 @@
-/*Comic Button*/
 .comicButton {
     --color-bg: #222;
 
-    font-family: "Font Awesome 6 Pro";
-    font-weight: 900;
     height: 30px;
     width: 30px;
     background-color: var(--color-bg);

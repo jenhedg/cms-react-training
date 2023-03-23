@@ -1,15 +1,9 @@
-.content {
-    background-color: #fff;
-}
-
 .comicItem {
     --color-text: #222222;
-    --font-karla: Arial, Helvetica, sans-serif;
 
     position: relative;
-    font-family: var(--font-karla);
+    font-family: var(--karla);
     margin-bottom: 28px;
-
 }
 
 .comicItemInner{
@@ -24,9 +18,9 @@
 .comicItem h2 {
     font-size: 1rem;
     color: var(--color-text);
+    font-weight: 900;
 }
 
-/*Img*/
 .comicImgCont {
     position: relative;
     aspect-ratio: 200/300;

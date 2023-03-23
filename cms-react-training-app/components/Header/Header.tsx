@@ -1,9 +1,8 @@
 import Image from "next/image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "assets/logo.png";
 import styles from "../../styles/Header.module.css";
 import { useAppContext } from "state/AppContext";
-import AppContextProvider  from "../../state/AppContext";
-
 
 export function Header() {
 	const { favorites } = useAppContext();
@@ -19,8 +18,14 @@ export function Header() {
                             <li><a href="#">Shop</a></li>
                         </ul>
                     </nav>
+                    <div className={styles.mobileNav}>
+                        <FontAwesomeIcon icon="bars" />
+                    </div>
                     <div className={styles.faves}>
-                        <button className={styles.favesBtn}>My Favorites</button>
+                        <button className={styles.favesBtn}>
+                            <FontAwesomeIcon icon="bolt-lightning" />
+                            <p className={styles.favesBtnText}>My Favorites</p>
+                        </button>
                         <span className={styles.favesCounter}>
                             ({Object.keys(favorites).length})
                         </span>

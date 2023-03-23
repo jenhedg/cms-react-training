@@ -1,13 +1,31 @@
+
+.loaderCont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    padding-top: 40px;
+}
+
+.loader {
+    display: block;
+    font-family: var(--karla);
+    font-size: 48px;
+    color: #222;
+    font-weight: 900;
+}
+
 .comicsContent {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: #fff;
     padding: 0 20px;
     width: 100%;
 }
 
-.comicsFallback {
+.gridFallback {
     display: block;
     min-width: 1034px;
     min-height: 1000px;

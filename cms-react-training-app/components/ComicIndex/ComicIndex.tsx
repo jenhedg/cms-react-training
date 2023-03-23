@@ -7,8 +7,11 @@ import { usePager } from '@/hooks/usePager';
 import Comic from "../Comic/Comic";
 import { FilterForm } from "../Filter/Index";
 import { MobileFilterBar } from "../MobileFilter/MobileFilter";
-import { Favorites } from '../Favorites/Favorites';
 import  { Pager }  from "../Pager/Pager";
+import Image from "next/image";
+import loader from "assets/preloader.gif";
+
+
 import styles from "@/styles/IndexPage.module.css";
 
 export default function ComicsIndex() {
@@ -26,9 +29,24 @@ export default function ComicsIndex() {
     return (
         <div className={styles.indexContainer}>
             { isLoading ? (
-                    <div>Loading...</div>
+                <div className={styles.gridFallback}>
+                    <div className={styles.loaderCont}>
+                    <Image
+                            src={loader}
+                            alt="Loading..."
+                            width={300}
+						    height={250}
+                            className={styles.loaderImg}
+                        />
+                        <div className={styles.loader}>Loading...</div>
+                    </div>
+                </div>
             ) : serverError ? (
-                <div> Error fetching comics</div>
+                <div className={styles.gridFallback}>
+                    <div className={styles.loaderCont}>
+                        <div className={styles.loader}> Error fetching comics</div>
+                    </div>
+                </div>
             ) : (
                 <div>
                     <MobileFilterBar />

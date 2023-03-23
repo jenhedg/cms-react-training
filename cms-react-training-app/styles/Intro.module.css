@@ -1,0 +1,63 @@
+.container {
+    --color-title: #C24868;
+	--color-text: #000;
+    --color-subtitle-bg: #9ECFC5;
+	margin: 0 auto 42px;
+	max-width: 770px;
+    padding: 40px 20px 0;
+}
+
+.newComics {
+	display: inline-block;
+	font-size: 14px;
+	line-height: calc(16 / 14);
+	color: var(--off-white);
+	text-shadow: 2px 2px 0px #222222;
+	font-weight: 900;
+	background-color: var(--color-subtitle-bg);
+	padding: 8px 15px 7px;
+	rotate: -3deg;
+	translate: -10px;
+	margin-bottom: 1px;
+}
+
+.title {
+	font-size: 25px;
+	font-family: var(--montserrat);
+	font-weight: 900;
+	line-height: 1;
+	color: var(--color-title);
+	margin-bottom: 18px;
+}
+
+.description {
+	font-family: var(--montserrat);
+	color: var(--color-text);
+	font-size: 20px;
+	line-height: 1.6;
+}
+
+@media (min-width: 64em) {
+	.container {
+		margin: 76px auto;
+	}
+
+	.newComics {
+		font-size: 1.125rem;
+		line-height: 1;
+		padding: 11px 20px 13px;
+		translate: -45px 11px;
+		margin-bottom: 0px;
+		font-family: var(--montserrat);
+	}
+
+	.title {
+		font-size: 3.0625rem;
+		position: relative;
+		margin-bottom: 36px;
+	}
+
+	.description {
+		max-width: 670px;
+	}
+}

@@ -1,4 +1,6 @@
 .footer {
+    --color-bg: #222;
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -6,10 +8,9 @@
     align-items: center;
     gap: 24px;
     padding: 30px;
-    background-color: #222222;
+    background-color: var(--color-bg);
 }
 
-/*Nav*/
 .footer__nav ul {
     display: flex;
     justify-content: center;
@@ -22,6 +23,6 @@
 
 .footer__nav ul,
 .footer__legal {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--montserrat);
     font-size: 14px;
 }
