@@ -18,6 +18,7 @@
     margin: 0;
     border: none;
     z-index: 2;
+    cursor: pointer;
 }
 
 .favorited {
