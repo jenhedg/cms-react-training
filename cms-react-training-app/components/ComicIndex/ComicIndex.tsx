@@ -10,8 +10,6 @@ import { MobileFilterBar } from "../MobileFilter/MobileFilter";
 import  { Pager }  from "../Pager/Pager";
 import Image from "next/image";
 import loader from "assets/preloader.gif";
-
-
 import styles from "@/styles/IndexPage.module.css";
 
 export default function ComicsIndex() {
@@ -23,8 +21,13 @@ export default function ComicsIndex() {
     const nextPage = () => end !== total && setCurrentPage(currentPage + 1);
 
     useEffect( () => {
-        fetchData(currentPage, filter)
-	}, [currentPage, filter]);
+        fetchData(currentPage, filter);
+        // if(filter[0] !== undefined  || filter[1] !== undefined) {
+        //     console.log("currpager", currentPage);
+        //     console.log("filter", filter[0], filter[1]);
+        //     currentPage === 1
+        // }
+	}, [currentPage, filter, setCurrentPage]);
 
     return (
         <div className={styles.indexContainer}>

@@ -26,9 +26,9 @@ export function Header() {
                             <FontAwesomeIcon icon="bolt-lightning" />
                             <p className={styles.favesBtnText}>My Favorites</p>
                         </button>
-                        <span className={styles.favesCounter}>
-                            ({Object.keys(favorites).length})
-                        </span>
+                            <span className={styles.favesCounter}>
+                                ({Object.keys(favorites).length})
+                            </span>
                     </div>
                 </div>
             </div>

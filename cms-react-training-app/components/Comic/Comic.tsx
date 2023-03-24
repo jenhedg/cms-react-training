@@ -37,8 +37,8 @@ export default function Comic({ comicData }: ComicDataProps) {
                         <Image
                             src={`${comicData.thumbnail.path}.${comicData.thumbnail.extension}`}
                             alt={`${comicData.title} poster`}
-                            width={183}
-						    height={276}
+                            width={300}
+						    height={450}
                             className={styles.comicImg}
                         />
                         <Button onClick={faveClickHandler} favorited={id in favorites}/>

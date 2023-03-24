@@ -10,9 +10,9 @@ type Props = {
 export default function Filter({ name, options }: Props) {
 	const { filter, setFilter } = useAppContext();
 	const [selectedFilterName, selectedFilterValue] = filter;
-	const formattedFilterName = (name) => `/${name}s`;
+	const formattedFilterName = (name : string) => `/${name}s`;
 
-	const handleChange = (e) => {
+	const handleChange = (e : any) => {
 		if (e.target.value === "") {
 			setFilter([]);
 			return;

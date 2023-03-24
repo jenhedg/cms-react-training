@@ -7,12 +7,10 @@
 }
 
 .comicItemInner{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row-reverse;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 190fr 175fr;
+    gap: 15px;
+    grid-auto-flow: dense;
 }
 
 .comicItem h2 {
@@ -23,15 +21,42 @@
 
 .comicImgCont {
     position: relative;
-    aspect-ratio: 200/300;
+    width: 50%;
+}
+
+.comicDetailCont,
+.comicImgCont {
+    position: relative;
+    grid-column: 1;
+    align-self: start;
+}
+
+.comicImgCont {
+    grid-column: 2;
+    aspect-ratio: 125/188;
+    display: block;
+    position: relative;
+    width: 100%;
+    box-shadow: 0px 5px 15px #00000029;
 }
 
 .comicImg {
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     object-fit: cover;
-    z-index: 1;
-    width: 125px;
-    height: 188px;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+    .comicItemInner {
+        display: block;
+    }
+
+    .comicImgCont {
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (min-width: 64em) {
@@ -43,13 +68,14 @@
         flex-direction: column;
     }
 
+    .comicDetailCont,
     .comicImgCont {
-        margin-bottom: 20px;
+        width: 100%;
     }
 
     .comicImg {
-        width: 183px;
-        height: 276px;
+        width: 100%;
+        height: 100%
     }
 
     .comicItem h2 {

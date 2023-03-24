@@ -1,5 +1,7 @@
 .comicButton {
     --color-bg: #222;
+    --color-active: #C24868;
+    --color-border: #F8F8F2;
 
     height: 30px;
     width: 30px;
@@ -18,9 +20,12 @@
     z-index: 2;
 }
 
+.favorited {
+	background-color: var(--color-active);
+	outline: 2px solid var(--color-border);
+}
 
-
-@media screen and (min-width: 64em) {
+@media screen and (min-width: 40em) {
     .comicButton {
         left: 50%;
         bottom: -30px;

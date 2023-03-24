@@ -7,7 +7,6 @@ const fetchComicsData = () => {
     const [serverError, setServerError] = useState<boolean>(false);
     const [total, setTotal] = useState<number>(0);
     const [limit, setLimit] = useState<number>(0);
-    // const [filter, setFilter] = useState<[]>([]);
 
     const baseUrl = `https://gateway.marvel.com/v1/public/`;
     const publicKey = `${process.env.apiKeyPublic}`;

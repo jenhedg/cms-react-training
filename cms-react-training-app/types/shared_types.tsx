@@ -30,3 +30,8 @@ export type PagerProps = {
 	prevPage: Function;
 	nextPage: Function;
 }
+
+export type ButtonProps = {
+	onClick: () => void;
+	favorited: boolean;
+};
